@@ -45,6 +45,11 @@
                                   <div class="form-group">
                                       <strong>Title</strong>
                                       <input type="text" name="title" class="form-control" placeholder="title">
+                                      <div class="text-center">
+                                          @if($errors->has('title'))
+                                              {{ $errors->first() }}
+                                          @endif
+                                      </div>
                                   </div>
 
                               </div>
@@ -56,8 +61,13 @@
                                       <textarea class="form-control" style="height:150px" name="body"
                                           ></textarea>
                                   </div>
+                                  <div class="text-center">
+                                      @if($errors->has('body'))
+                                          {{ $errors->first() }}
+                                      @endif
+                                  </div>
                               </div>
-                          >
+
                               <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                                   <button type="submit" class="btn btn-primary">Post</button>
                               </div>
@@ -87,6 +97,7 @@
                           <td>{{$post->title}}</td>
                           <td>{{$post->body}}</td>
                           <td></td>
+
 
                           <td>
 

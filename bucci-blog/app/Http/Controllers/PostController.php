@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Requests\CreateFormRequest;
 class PostController extends Controller
 {
     /**
@@ -30,11 +30,8 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateFormRequest $request)
     {
-
-
-
 
 
         $array=collect($request->only(['title','body']))->all();
