@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class adminController extends Controller
+class AdminpagesController extends Controller
 {
     public function index(){
         return view ('adminpages.index');
