@@ -13,9 +13,6 @@ Route::get('/contact', [App\Http\Controllers\PagesController::class, 'contact'])
 Route::get('/service', [App\Http\Controllers\PagesController::class, 'service'])->name('pages.service');
 
 Route::get('/admin/index', [App\Http\Controllers\AdminpagesController::class, 'index'])->name('admin.index');
-Route::get('/admin/post/headerpost', [App\Http\Controllers\AdminpagesController::class, 'headerpost'])->name('admin.headerpost');
-Route::get('/admin/post/mainpost', [App\Http\Controllers\AdminpagesController::class, 'mainpost'])->name('admin.mainpost');
-Route::get('/admin/post/sidepost', [App\Http\Controllers\AdminpagesController::class, 'sidepost'])->name('admin.sidepost');
 
 
 

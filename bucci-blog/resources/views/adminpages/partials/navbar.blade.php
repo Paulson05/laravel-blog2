@@ -7,10 +7,10 @@
             </a>
             <hr class="sidebar-divider my-0">
             <ul class="nav navbar-nav text-light" id="accordionSidebar">
-                <li class="nav-item"><a class="nav-link active" href="{{ route('admin.index') }}"><i class="fas fa-tachometer-alt"></i><span>Create post</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ route('admin.mainpost') }}"><i class="fas fa-user"></i><span>Mainpost</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ route('admin.headerpost') }}"><i class="fas fa-table"></i><span>Headerpost</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ route('admin.sidepost') }}"><i class="far fa-user-circle"></i><span>Sidepost</span></a></li>
+                <li class="nav-item"><a class="nav-link active" href=""><i class="fas fa-tachometer-alt"></i><span>Create post</span></a></li>
+                <li class="nav-item"><a class="nav-link" href=""><i class="fas fa-user"></i><span>Mainpost</span></a></li>
+                <li class="nav-item"><a class="nav-link" href=""><i class="fas fa-table"></i><span>Headerpost</span></a></li>
+                <li class="nav-item"><a class="nav-link" href=""><i class="far fa-user-circle"></i><span>Sidepost</span></a></li>
                 <li class="nav-item"><a class="nav-link" href=""><i class="fas fa-user-circle"></i><span>Register</span></a></li>
             </ul>
             <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
