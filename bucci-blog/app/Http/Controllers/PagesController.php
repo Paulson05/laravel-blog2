@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
+use Auth;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
     public function home(){
-        return view ('pages.home');
+        $posts = Post::all();
+        return view ('pages.home')->with(['posts' => $posts,]);
     }
      public function about(){
          return view ('pages.about');

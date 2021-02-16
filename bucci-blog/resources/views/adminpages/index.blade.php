@@ -81,11 +81,11 @@
                       <th>READ MORE</th>
 
                   </tr>
-                  {{--  @foreach ($posts as $post)  --}}
+                    @foreach ($posts as $post)
                       <tr>
 
-                          <td></td>
-                          <td></td>
+                          <td>{{$post->title}}</td>
+                          <td>{{$post->body}}</td>
                           <td></td>
 
                           <td>
@@ -105,7 +105,7 @@
                           </td>
 
                       </tr>
-               {{--  @endforeach  --}}
+                 @endforeach
               </table>
 
 

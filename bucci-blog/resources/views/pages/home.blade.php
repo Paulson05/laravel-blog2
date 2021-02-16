@@ -26,15 +26,14 @@
                   <a href="">read more</a>
               </div>
               <div class="col-md-12">
-                  <h2>post Title</h2>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam rerum accusamus architecto blanditiis, eum sunt, ducimus tempora mollitia minima provident ad dignissimos. Id rem amet sapiente. Facere inventore ea vero.</p>
-                  <a href="">read more</a>
+
+               @foreach ($posts as $post)
+                      <h2>{{$post->title}}</h2>
+                      <p>{{$post->body}}</p>
+                      <a href="">read more</a>
+                  @endforeach
               </div>
-              <div class="col-md-12">
-                  <h2>post Title</h2>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam rerum accusamus architecto blanditiis, eum sunt, ducimus tempora mollitia minima provident ad dignissimos. Id rem amet sapiente. Facere inventore ea vero.</p>
-                  <a href="">read more</a>
-              </div>
+
           </div>
 
            <div class="col-4">
