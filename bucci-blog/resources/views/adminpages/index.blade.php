@@ -1,6 +1,6 @@
 @extends('adminpages.layout.dashboard')
 @section('content')
-       
+
 
 <div id="page-top">
   <div id="wrapper">
@@ -11,15 +11,15 @@
               @include('adminpages.partials.usernavbar')
           <div class="container-fluid">
              <div class="row">
-           
+
                  </div> <div class="d-sm-flex justify-content-between align-items-center mb-4">
-               
+
                   <!-- Button to Open the Modal -->
                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                     Create  POST
                   </button>
-           
-    
+
+
                </div>
 
              </div>
@@ -37,18 +37,18 @@
 
                     <!-- Modal body -->
                     <div class="modal-body">
-                      <form action="" method="POST" enctype= "multipart/form-data" >
+                      <form action="{{route('admin.post')}}" method="POST" enctype= "multipart/form-data" >
                           @csrf
 
                           <div class="row">
                               <div class="col-xs-12 col-sm-12 col-md-12">
                                   <div class="form-group">
                                       <strong>Title</strong>
-                                      <input type="text" name="title" class="form-control" placeholder="News Heading">
+                                      <input type="text" name="title" class="form-control" placeholder="title">
                                   </div>
 
                               </div>
-                            
+
 
                               <div class="col-xs-12 col-sm-12 col-md-12">
                                   <div class="form-group">
@@ -100,8 +100,8 @@
                                   <a href="" >
                                       <i class="btn btn-danger fas fa-trash-alt" ></i>
                                   </a>
-                                     
-                                        
+
+
                           </td>
 
                       </tr>
@@ -116,6 +116,6 @@
                     </div>
                   </div>
                 </div>
-                
+
 @endsection
- 
+

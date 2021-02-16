@@ -13,6 +13,7 @@ Route::get('/contact', [App\Http\Controllers\PagesController::class, 'contact'])
 Route::get('/service', [App\Http\Controllers\PagesController::class, 'service'])->name('pages.service');
 
 Route::get('/admin/index', [App\Http\Controllers\AdminpagesController::class, 'index'])->name('admin.index');
+Route::post('/admin/post', [App\Http\Controllers\PostController::class, 'store'])->name('admin.post');
 
 
 
