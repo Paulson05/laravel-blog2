@@ -9,8 +9,12 @@
             <h1 class="text-center">
                 welcome to Bucc! Blog
             </h1>
-            <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, reiciendis molestiae laborum ut, aliquid repellendus porro atque odio nobis, magnam dolorem ipsa sed provident molestias culpa recusandae veritatis reprehenderit iure.</P>
-            <button class="btn btn-primary ">latest post</button>
+            @foreach ($post3 as $post)
+                <h2>{{$post->title}}</h2>
+                <p>{{Substr($post->body, 0, 200)}} {{strlen($post->body) > 200 ? "...." : ""}}</p>
+                <a href="">read more</a>
+            @endforeach
+
         </div>
        </div>
      </div>
@@ -29,7 +33,7 @@
 
                @foreach ($posts as $post)
                       <h2>{{$post->title}}</h2>
-                      <p>{{$post->body}}</p>
+                      <p>{{Substr($post->body, 0, 200)}} {{strlen($post->body) > 200 ? "...." : ""}}</p>
                       <a href="">read more</a>
                   @endforeach
               </div>
@@ -38,17 +42,36 @@
 
            <div class="col-4">
                <div class="col-12">
-                   <h4 class="text-center">side bar</h4>
-                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam rerum accusamus architecto blanditiis, eum sunt, ducimus tempora mollitia minima provident ad dignissimos. Id rem amet sapiente. Facere inventore ea vero.</p>
-
+                   <h4 class="text-center">Local News</h4>
+                   @foreach ($post2 as $post)
+                       <h2>{{$post->title}}</h2>
+                       <p>{{Substr($post->body, 0, 200)}} {{strlen($post->body) > 200 ? "...." : ""}}</p>
+                       <a href="">read more</a>
+                   @endforeach
+               </div>
+               <div class="col-12">
+                   <h4 class="text-center">World News</h4>
+                   @foreach ($post4 as $post)
+                       <h2>{{$post->title}}</h2>
+                       <p>{{Substr($post->body, 0, 200)}} {{strlen($post->body) > 200 ? "...." : ""}}</p>
+                       <a href="">read more</a>
+                   @endforeach
+               </div>
+               <div class="col-12">
+                   <h4 class="text-center">Sport News</h4>
+                   @foreach ($post4 as $post)
+                       <h2>{{$post->title}}</h2>
+                       <p>{{Substr($post->body, 0, 200)}} {{strlen($post->body) > 200 ? "...." : ""}}</p>
+                       <a href="">read more</a>
+                   @endforeach
                </div>
            </div>
 
       </div>
 
-         <div class="text-center">
-             {!!$posts->links();!!}
-         </div>
+{{--         <div class="text-center">--}}
+{{--             {!!$posts->links();!!}--}}
+{{--         </div>--}}
 
   </div>
 @endsection

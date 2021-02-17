@@ -95,7 +95,7 @@
                     <th>Title</th>
                     <th>Body</th>
                     <th>Created At</th>
-
+                    <th>CRUD</th>
                 </tr>
                 @foreach ($posts as $post)
                     <tr>
