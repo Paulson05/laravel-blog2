@@ -9,7 +9,9 @@ class AdminpagesController extends Controller
 {
     public function index(){
         $posts = Post::all();
-        return view ('adminpages.index')->with(['posts'=>$posts,]);
+        return view ('adminpages.index')->with([
+            'posts'=>$posts,
+            ]);
     }
 
 

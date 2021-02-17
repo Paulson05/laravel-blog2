@@ -131,13 +131,8 @@ return [
     */
 
     'custom' => [
-        'tile' => [
-            'required' => ' title required',
-            'title' => 'post a content',
-        ],
-        'body' => [
-            'required' => ' body required',
-            'title' => 'post a content',
+        'attribute-name' => [
+            'rule-name' => 'custom-message',
         ],
     ],
 

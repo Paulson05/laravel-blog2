@@ -10,7 +10,7 @@ class PagesController extends Controller
 {
     public function home(){
         $posts = Post::all();
-        return view ('pages.home')->with(['posts' => $posts,]);
+        return view ('pages.home')->with(['posts' => $posts,])->with('info', 'your profile has been updated');
     }
      public function about(){
          return view ('pages.about');

@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Requests\CreateFormRequest;
+
+use App\Models\Post;
+use Auth;
+use Illuminate\Http\Request;
 class PostController extends Controller
 {
     /**
@@ -9,10 +12,7 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
-    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -30,15 +30,18 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CreateFormRequest $request)
+    public function store(Request $request)
     {
+
+
+
 
 
         $array=collect($request->only(['title','body']))->all();
         Post::create($array);
 
 
-        return  redirect()->route('admin.index');
+        return  redirect()->route('admin.index')->with('info', 'post created succesfully');
     }
 
     /**
@@ -47,10 +50,10 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Post $id)
     {
-        $post = Post::find($id);
-        return view ('admin.index')->with('post', $post);
+        $posts = Post::find($id);
+        return view ('adminpages.show')->with(['post'=> $id]);
     }
 
     /**

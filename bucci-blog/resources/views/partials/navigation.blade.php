@@ -8,9 +8,9 @@
           </button>
           <div class="collapse navbar-collapse pull-lg-right" id="navbarSupportedContent">
             <ul class="navbar-nav  mx-auto  ">
-             
+
               <li class="nav-item mx-3">
-                <a class="nav-link" href="{{ route('pages.home') }}"><i class="fas fa-home">Home</i></a>
+                <a class="nav-link active" href="{{ route('pages.home') }}"><i class="fas fa-home">Home</i></a>
               </li>
               <li class="nav-item mx-3">
                 <a class="nav-link" href="{{ route('pages.about') }}"><i class="fas fa-user">About</i></a>
@@ -21,9 +21,9 @@
               <li class="nav-item mx-3">
                 <a class="nav-link" href="{{ route('pages.service')}}"><i class="fas fa-cog">service</i></a>
               </li>
-              
+
             </ul>
-            
+
           </div>
         </div>
       </nav>
