@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class AdminpagesController extends Controller
 {
     public function index(){
-        $posts = Post::all();
+        $posts = Post::orderBy('id', 'desc')->paginate(7);
         return view ('adminpages.index')->with([
             'posts'=>$posts,
             ]);

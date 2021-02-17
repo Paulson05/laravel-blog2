@@ -9,7 +9,8 @@ use Illuminate\Http\Request;
 class PagesController extends Controller
 {
     public function home(){
-        $posts = Post::all();
+//        $posts = Post::all();
+        $posts = Post::orderBy('id', 'desc')->paginate(10);
         return view ('pages.home')->with(['posts' => $posts,])->with('info', 'your profile has been updated');
     }
      public function about(){
