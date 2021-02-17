@@ -44,7 +44,7 @@
 
                                         </div>
                                         <div class="col-md-6">
-                                            <a href="" >
+                                            <a href="{{route('admin.delete', ['id'=>$post->id])}}" >
                                                 <i class="btn btn-danger fas fa-trash-alt" ></i>
                                             </a>
                                         </div>

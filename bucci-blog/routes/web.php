@@ -17,6 +17,8 @@ Route::post('/admin/post', [App\Http\Controllers\PostController::class, 'store']
 Route::get('/admin/show/{id}', [App\Http\Controllers\PostController::class, 'show'])->name('admin.show');
 Route::get('/admin/edit/{id}', [App\Http\Controllers\PostController::class, 'edit'])->name('admin.edit');
 Route::post('/admin/update/{id}', [App\Http\Controllers\PostController::class, 'update'])->name('admin.update');
+Route::get('/admin/delete/{id}', [App\Http\Controllers\PostController::class, 'destroy'])->name('admin.delete');
+
 
 
 
