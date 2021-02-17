@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\createFormRequest;
 use App\Models\Post;
 use Auth;
 use Illuminate\Http\Request;
@@ -30,7 +31,7 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(createFormRequest $request)
     {
 
 
@@ -52,8 +53,10 @@ class PostController extends Controller
      */
     public function show(Post $id)
     {
-        $posts = Post::find($id);
-        return view ('adminpages.show')->with(['post'=> $id]);
+
+        return view ('adminpages.show')->with([
+            'post'=> $id
+        ]);
     }
 
     /**
@@ -62,9 +65,11 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Post $id)
     {
-        //
+        return view ('adminpages.edit')->with([
+            'post'=> $id
+        ]);
     }
 
     /**
@@ -74,9 +79,16 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Post $id)
     {
-        //
+
+            $id->update([
+                'title' => "$request->title",
+                'body'     => "$request->body"
+            ]);
+
+        return redirect()->route('admin.index')
+            ->with('info', 'post updated!');
     }
 
     /**

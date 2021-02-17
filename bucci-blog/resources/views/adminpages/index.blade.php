@@ -7,7 +7,7 @@
 @extends('adminpages.layout.dashboard')
 @section('content')
 
-@section('title', '| show')
+@section('title', '| show post')
 
 @include('adminpages.partials.navbar')
 
@@ -49,7 +49,11 @@
                                     <div class="form-group">
                                         <strong>Title</strong>
                                         <input type="text" name="title" class="form-control" placeholder="title">
-
+                                        <span class="text-danger form-text">
+                                            @if($errors->has('title'))
+                                                {{ $errors->first('title') }}
+                                            @endif
+                                        </span>
                                     </div>
 
                                 </div>
@@ -58,8 +62,13 @@
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">
                                         <strong>Body:</strong>
-                                        <textarea class="form-control" style="height:150px" name="body"
+                                        <textarea class="form-control" style="height:150px" name="body" value="body"
                                         ></textarea>
+                                       <span class="text-danger form-text">
+                                            @if($errors->has('body'))
+                                               {{ $errors->first('body') }}
+                                           @endif
+                                       </span>
                                     </div>
 
                                 </div>
@@ -99,10 +108,10 @@
                         <td>
 
 
-                            <a href="{{ route('admin.show', ['id'=>$post->id]) }}" title="show">
+                            <a href="{{ route('admin.show', ['id'=>$post->id])}}" title="show">
                                 <i class="btn btn-danger fas fa-eye"></i>
                             </a>
-                            <a href="" >
+                            <a href="{{ route('admin.edit',['id' => $post->id]) }}" >
                                 <i class="btn btn-danger fas fa-edit" ></i>
                             </a>
                             <a href="" >

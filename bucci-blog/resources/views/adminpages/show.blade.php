@@ -33,12 +33,12 @@
                                     </dl>
                                     <dl class="dl-horizontal">
                                         <dt> Last Updated AT:</dt>
-                                        <dd>{{date ('M j, Y h:ia', strtotime($post->created_at))}}</dd>
+                                        <dd>{{date ('M j, Y h:ia', strtotime($post->updated_at))}}</dd>
                                     </dl>
                                     <hr>
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <a href="" >
+                                            <a href=" {{route('admin.edit', ['id'=>$post->id])}}" >
                                                 <i class="btn btn-danger fas fa-edit" ></i>
                                             </a>
 

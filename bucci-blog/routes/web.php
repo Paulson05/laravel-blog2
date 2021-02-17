@@ -15,6 +15,9 @@ Route::get('/service', [App\Http\Controllers\PagesController::class, 'service'])
 Route::get('/admin/index', [App\Http\Controllers\AdminpagesController::class, 'index'])->name('admin.index');
 Route::post('/admin/post', [App\Http\Controllers\PostController::class, 'store'])->name('admin.post');
 Route::get('/admin/show/{id}', [App\Http\Controllers\PostController::class, 'show'])->name('admin.show');
+Route::get('/admin/edit/{id}', [App\Http\Controllers\PostController::class, 'edit'])->name('admin.edit');
+Route::post('/admin/update/{id}', [App\Http\Controllers\PostController::class, 'update'])->name('admin.update');
+
 
 
 
