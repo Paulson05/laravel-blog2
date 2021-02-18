@@ -14,7 +14,6 @@
 
 
 
-
                 <div class="container-fluid">
                     <form action="{{route('admin.update', ['id'=>$post->id])}}" method="POST">
                         @include('adminpages.partials.alert')
@@ -24,7 +23,11 @@
                                 <div class="form-group">
                                                     <strong>Title</strong>
                                                     <input type="text" name="title" class="form-control" value="{{ $post->title}}">
-                                                </div>
+                                </div>
+                                <div class="form-group">
+                                    <strong>Slug</strong>
+                                    <input type="text" name="slug" class="form-control" value="{{ $post->slug}}">
+                                </div>
                                 <div class="form-group">
                                         <strong>Body:</strong>
                                         <textarea class="form-control" style="height:150px" name="body"

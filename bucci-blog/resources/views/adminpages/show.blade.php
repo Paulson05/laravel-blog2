@@ -22,11 +22,15 @@
                             <div class="col-8" style="background: blue;">
                                 <div class="col-md-8">
                                     <h1 class="text-center">{{ $post->title }} </h1>
+                                    <p>{{ $post->slug }}</p>
                                     <p>{{ $post->body }}</p>
                                 </div>
                             </div>
                             <div class="col-4">
                                 <div class="clo-md-4">
+                                    <dl class="dl-horizontal">
+                                        <dt>URL:</dt>
+                                      <a href="{{($post->slug)}}"><dd>{{url($post->slug)}}</dd></a>
                                     <dl class="dl-horizontal">
                                         <dt>Created AT:</dt>
                                         <dd>{{date ('M j, Y h:ia', strtotime($post->created_at))}}</dd>

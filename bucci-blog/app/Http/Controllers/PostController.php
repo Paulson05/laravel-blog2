@@ -20,7 +20,7 @@ class PostController extends Controller
 
 
 
-        $array=collect($request->only(['title','body']))->all();
+        $array=collect($request->only(['title', 'body', 'slug']))->all();
         Post::create($array);
 
 
@@ -49,7 +49,8 @@ class PostController extends Controller
 
             $id->update([
                 'title' => "$request->title",
-                'body'     => "$request->body"
+                'slug' => "$request->slug",
+                'body' => "$request->body"
             ]);
 
         return redirect()->route('admin.index')
