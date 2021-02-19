@@ -8,6 +8,12 @@ use Auth;
 use Illuminate\Http\Request;
 class PostController extends Controller
 {
+    public function index(){
+        $posts = Post::orderBy('id', 'desc')->paginate(7);
+        return view ('adminpages.index')->with([
+            'posts'=>$posts,
+        ]);
+    }
 
     public function create()
     {
@@ -18,49 +24,47 @@ class PostController extends Controller
     public function store(Request $request)
     {
 
-
-
         $array=collect($request->only(['title', 'body', 'slug']))->all();
         Post::create($array);
 
 
-        return  redirect()->route('admin.index')->with('info', 'post created succesfully');
+        return  redirect()->route('posts.index')->with('info', 'post created succesfully');
     }
 
 
-    public function show(Post $id)
+    public function show(Post $post)    // note id is post
     {
 
         return view ('adminpages.show')->with([
-            'post'=> $id
+            'post'=> $post   // note id is post
         ]);
     }
 
-    public function edit(Post $id)
+    public function edit(Post $post)
     {
         return view ('adminpages.edit')->with([
-            'post'=> $id
+            'post'=> $post
         ]);
     }
 
 
-    public function update(Request $request, Post $id)
+    public function update(Request $request, Post $post)
     {
 
-            $id->update([
+            $post->update([
                 'title' => "$request->title",
                 'slug' => "$request->slug",
                 'body' => "$request->body"
             ]);
 
-        return redirect()->route('admin.index')
+        return redirect()->route('posts.index')
             ->with('info', 'post updated!');
     }
 
-    public function destroy(Request $request, Post $id)
+    public function destroy(Request $request, Post $post)
     {
-        $id->delete();
-        return redirect()->route('admin.index');
+        $post->delete();
+        return redirect()->route('posts.index')->with('info', 'post deleted!');
     }
 }
 

@@ -19,7 +19,7 @@
 
 
                 @include('adminpages.partials.alert')
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                <button type="button" class="btn btn-primary  m-5" data-toggle="modal" data-target="#myModal">
                     Create  POST
                 </button>
 
@@ -41,7 +41,7 @@
 
                     <!-- Modal body -->
                     <div class="modal-body">
-                        <form action="{{route('admin.post')}}" method="post" enctype= "multipart/form-data" >
+                        <form action="{{route('posts.store')}}" method="post" enctype= "multipart/form-data" >
                             @csrf
 
                             <div class="row">
@@ -117,15 +117,17 @@
                         <td>
 
 
-                            <a href="{{ route('admin.show', ['id'=>$post->id])}}" title="show">
+                            <a href="{{ route('posts.show', ['post'=>$post->id])}}" title="show">
                                 <i class="btn btn-danger fas fa-eye"></i>
                             </a>
-                            <a href="{{ route('admin.edit',['id' => $post->id]) }}" >
+                            <a href="{{ route('posts.edit',['post' => $post->id]) }}" >
                                 <i class="btn btn-danger fas fa-edit" ></i>
                             </a>
-                            <a href="{{ route('admin.delete',['id' => $post->id]) }}" >
-                                <i class="btn btn-danger fas fa-trash-alt" ></i>
-                            </a>
+                            <form style="display: inline-block" method="post" action="{{ route('posts.destroy',['post' => $post->id]) }}" >
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-sm p-0"><i class="btn btn-danger fas fa-trash-alt" ></i></button>
+                            </form>
 
 
                         </td>

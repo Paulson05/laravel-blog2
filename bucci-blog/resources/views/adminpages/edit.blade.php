@@ -13,9 +13,9 @@
 
 
 
-
                 <div class="container-fluid">
-                    <form action="{{route('admin.update', ['id'=>$post->id])}}" method="POST">
+                    <form action="{{route('posts.update', ['post'=>$post->id])}}" method="POST">
+                        @method('PUT')
                         @include('adminpages.partials.alert')
                         <div class="row ">
                             <div class="col-8" >
@@ -45,9 +45,9 @@
                                 </dl>
                                 <hr>
                                 <div class="row">
-                                    <button class="btn btn-success" >
-                                        <i>cancle</i>
-                                    </button>
+                                    <a href="{{route('posts.index')}}" class="btn btn-success" >
+                                        <i>cancel</i>
+                                    </a>
                                     <div class="col-8 ">
                                         <button type="submit" class="btn btn-danger" >
                                             <i >save changes</i>

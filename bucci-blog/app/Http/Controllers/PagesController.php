@@ -12,9 +12,44 @@ class PagesController extends Controller
 //        $posts = Post::all();
         $posts = Post::orderBy('updated_at', 'desc')->limit(12)->get();
         $post2 = Post::orderBy('created_at', 'desc')->limit(4)->get();
-        $post3 = Post::orderBy('updated_at', 'desc')->limit(1)->get();
+        $post3 = Post::inRandomOrder()->orderBy('updated_at','desc')->limit(1)->get();
         $post4 = Post::orderBy('created_at', 'desc')->limit(2)->get();
         $post5 = Post::orderBy('created_at', 'desc')->limit(2)->get();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         return view ('pages.home')->with([
             'posts' => $posts,
