@@ -22,7 +22,7 @@
                 <a class="nav-link" href="{{ route('pages.service')}}"><i class="fas fa-cog">service</i></a>
               </li>
               <li class="nav-item mx-3">
-                <a class="nav-link" href=""><i class="fas fa-cog">login</i></a>
+                <a class="nav-link" href="{{ route('auth.login') }}"><i class="fas fa-cog">login</i></a>
               </li>
               <li class="nav-item mx-3">
                 <a class="nav-link" href="{{ route('auth.register')}}"><i class="fas fa-cog">Register</i></a>

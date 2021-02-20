@@ -15,7 +15,7 @@ class AuthController extends \App\Http\Controllers\Controller
     }
     public function  postSignUp(Request $request){
 
-        $array=collect($request->only(['name', 'email', 'password']))->all();
+        $array=collect($request->only(['email','name']))->put('password',bcrypt($request->password))->all();
         Users::create($array);
         return  redirect()->route('pages.home')->with('info', 'post created succesfully');
 
@@ -25,7 +25,6 @@ class AuthController extends \App\Http\Controllers\Controller
 
     }
     public function  postLogin(Request $request){
-
         if (!Auth::attempt($request->only(['email', 'password']), $request->has('remember'))){
 
             return redirect()->back()->with('info', 'could not sign you in with those details');
