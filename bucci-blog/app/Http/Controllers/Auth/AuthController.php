@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 
 
 use App\Models\Users;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -35,7 +36,10 @@ class AuthController extends \App\Http\Controllers\Controller
             ->with('info', 'you are signed in!');
     }
     public function  getLogOut(){
-        return view ('admin.index');
+
+        Auth::logout();
+        return redirect()->route('pages.home');
+
 
     }
 

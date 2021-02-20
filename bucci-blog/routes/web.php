@@ -27,7 +27,7 @@ Route::get('/auth/register', [AuthController::class, 'getSignUp'])->name('auth.r
 Route::post('/auth/post/register', [AuthController::class,'postSignUp'])->name('auth.postregister');
     Route::get('/auth/login', [AuthController::class, 'getLogIN'])->name('auth.login');
      Route::post('/auth/post/login', [AuthController::class, 'postLogIn'])->name('auth.postLogIn');
-    // Route::get('/auth/logout', [AuthController::class, 'getLogOut'])->name('auth.logout');
+     Route::get('/auth/logout', [AuthController::class, 'getLogOut'])->name('auth.logout');
 
 
 
