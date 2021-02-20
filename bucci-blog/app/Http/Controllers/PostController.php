@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\createFormRequest;
 use App\Models\Post;
+use App\Models\Users;
 use Auth;
 use Illuminate\Http\Request;
 class PostController extends Controller
@@ -15,10 +16,7 @@ class PostController extends Controller
         ]);
     }
 
-    public function create()
-    {
-        //
-    }
+
 
 
     public function store(Request $request)

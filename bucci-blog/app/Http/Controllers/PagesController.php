@@ -16,41 +16,6 @@ class PagesController extends Controller
         $post4 = Post::orderBy('created_at', 'desc')->limit(2)->get();
         $post5 = Post::orderBy('created_at', 'desc')->limit(2)->get();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         return view ('pages.home')->with([
             'posts' => $posts,
             'post2' => $post2,

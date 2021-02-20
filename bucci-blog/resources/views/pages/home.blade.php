@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', '| home')
+@section('title', '| Blog')
 @section('content')
 <div class="container m-5" style="color: red; background-color:yellow; height:400px; padding-top:100px;">
    <div class="row">
@@ -72,7 +72,7 @@
       </div>
 
 {{--         <div class="text-center">--}}
-{{--             {!!$posts->links();!!}--}}
+{{--             {!! $posts->links() !!}--}}
 {{--         </div>--}}
 
   </div>
