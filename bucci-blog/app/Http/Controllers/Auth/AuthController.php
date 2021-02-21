@@ -43,4 +43,11 @@ class AuthController extends \App\Http\Controllers\Controller
 
     }
 
+    public function users( ){
+        $users = Users::all();
+        return view('adminpages.users')->with([
+           'users' => $users,
+        ]);
+    }
+
 }

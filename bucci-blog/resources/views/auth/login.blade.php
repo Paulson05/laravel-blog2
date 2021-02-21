@@ -18,10 +18,12 @@
 
             </div>
             <div class="row justify-content-center">
-                <div class="col-md-2 p-2">
-                   remember me <input type="checkbox">
-                    <button class="btn btn-success">submit</button>
-                </div>
+                    <div class="col-md-4 p-2">
+                        <a href="{{route('auth.resetlinkemail')}}" class="" style="text-decoration: none;">forget password</a>
+                       remember me <input type="checkbox">
+                        <button class="btn btn-success">submit</button>
+
+                    </div>
 
             </div>
 

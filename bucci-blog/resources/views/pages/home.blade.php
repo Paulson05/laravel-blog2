@@ -7,7 +7,7 @@
        <div class="container">
         <div class="jumbotron">
             <h1 class="text-center">
-                welcome to Bucc! Blog
+                welcome to 3ucc! Blog
             </h1>
             @foreach ($post3 as $post)
                 <h2>{{$post->title}}</h2>

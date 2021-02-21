@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Auth\PassWordResetContoller;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
@@ -17,17 +18,24 @@ Route::get('blog/{post:slug}', [App\Http\Controllers\BlogController::class, 'get
 
 
 Route::prefix('admin')->group(function (){
-    Route::resource('posts', PostController::class)->only(['index','store','show','update','destroy','edit', ]);
+    Route::resource('posts', PostController::class)->only(['index','store','show','update','destroy','edit',  ]);
+    Route::get('/auth/register', [AuthController::class, 'getSignUp'])->name('auth.register');
+    Route::post('/auth/post/register', [AuthController::class,'postSignUp'])->name('auth.postregister');
+    Route::get('/auth/login', [AuthController::class, 'getLogIN'])->name('auth.login');
+    Route::post('/auth/post/login', [AuthController::class, 'postLogIn'])->name('auth.postLogIn');
+    Route::get('/auth/logout', [AuthController::class, 'getLogOut'])->name('auth.logout');
+    Route::get('/auth/users', [AuthController::class, 'users'])->name('auth.users');
 
 
+    Route::get('password/',  [PasswordResetController::class, 'ResetLinkEmail'])->name('auth.resetlinkemail');
+    Route::get('password/reset',  [PasswordResetController::class, 'ShowResetForm'])->name('auth.resetform');
+
+    //
 
 });
 
-Route::get('/auth/register', [AuthController::class, 'getSignUp'])->name('auth.register');
-Route::post('/auth/post/register', [AuthController::class,'postSignUp'])->name('auth.postregister');
-    Route::get('/auth/login', [AuthController::class, 'getLogIN'])->name('auth.login');
-     Route::post('/auth/post/login', [AuthController::class, 'postLogIn'])->name('auth.postLogIn');
-     Route::get('/auth/logout', [AuthController::class, 'getLogOut'])->name('auth.logout');
+
+
 
 
 
