@@ -16,4 +16,10 @@ class Users extends Model implements AuthContract
         'password',
 
     ];
+    public function tokens(){
+        return $this->hasMany(PasswordResetToken::class,'user_id');
+    }
+    public function hasToken($token){
+        return (bool)$this->tokens()->where('token',$token)->count();
+    }
 }

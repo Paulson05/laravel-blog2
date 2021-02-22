@@ -1,7 +1,8 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthController;
-use App\Http\Controllers\Auth\PassWordResetContoller;
+
+use App\Http\Controllers\Auth\PasswordResetController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
@@ -27,8 +28,10 @@ Route::prefix('admin')->group(function (){
     Route::get('/auth/users', [AuthController::class, 'users'])->name('auth.users');
 
 
-    Route::get('password/',  [PasswordResetController::class, 'ResetLinkEmail'])->name('auth.resetlinkemail');
     Route::get('password/reset',  [PasswordResetController::class, 'ShowResetForm'])->name('auth.resetform');
+    Route::get('password/reset/{email}/{token}',  [PasswordResetController::class, 'changepassword'])->name('auth.resetformtoken');
+    Route::post('password/email',  [PasswordResetController::class, 'resetLinkEmail'])->name('auth.reset');
+    Route::post('password/reset',  [PasswordResetController::class, 'resetLinkEmail'])->name('auth.resetlink');
 
     //
 

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', '| login ')
 @section('content')
-    <div class="container m-5">
+    <div class="container mt-5">
         <h2 class="text-center">Login</h2>
         <form action ="{{route('auth.postLogIn')}}" method="POST" class="m-5" >
         @csrf
@@ -19,7 +19,7 @@
             </div>
             <div class="row justify-content-center">
                     <div class="col-md-4 p-2">
-                        <a href="{{route('auth.resetlinkemail')}}" class="" style="text-decoration: none;">forget password</a>
+                        <a href="{{route('auth.resetform')}}" class="" style="text-decoration: none;">forget password</a>
                        remember me <input type="checkbox">
                         <button class="btn btn-success">submit</button>
 
