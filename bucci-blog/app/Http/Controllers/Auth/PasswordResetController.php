@@ -35,6 +35,16 @@ class PasswordResetController extends \App\Http\Controllers\Controller
         if(!$user->hasToken($token)){
             abort(403);
         }
-        return view('auth.password.reset');
+        return view('auth.password.reset')->with('email',$email);
+  }
+  public function postPasswordChange($email,Request  $request){
+        $user = Users::where('email',$email)->firstOrFail();
+        $this->validate($request,[
+           'password'=>'required|same:confirm_password',
+           'confirm_password'=>'required|same:password',
+        ]);
+        $user->tokens()->delete();
+        $user->update(['password'=>$request->password]);
+        return redirect()->route('pages.home')->with(['info'=>'password changed successfully']);
   }
 }

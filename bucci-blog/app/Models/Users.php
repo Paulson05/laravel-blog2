@@ -22,4 +22,7 @@ class Users extends Model implements AuthContract
     public function hasToken($token){
         return (bool)$this->tokens()->where('token',$token)->count();
     }
+    public function setPasswordAttribute($value){
+        $this->attributes['password']=bcrypt($value);
+    }
 }

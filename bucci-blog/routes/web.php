@@ -32,7 +32,7 @@ Route::prefix('admin')->group(function (){
     Route::get('password/reset/{email}/{token}',  [PasswordResetController::class, 'changepassword'])->name('auth.resetformtoken');
     Route::post('password/email',  [PasswordResetController::class, 'resetLinkEmail'])->name('auth.reset');
     Route::post('password/reset',  [PasswordResetController::class, 'resetLinkEmail'])->name('auth.resetlink');
-
+    Route::post('password/reset/{email}/',[PasswordResetController::class, 'postPasswordChange'])->name('auth.resetformtokenchange');
     //
 
 });
