@@ -29,6 +29,18 @@
                                     <input type="text" name="slug" class="form-control" value="{{ $post->slug}}">
                                 </div>
                                 <div class="form-group">
+                                    <strong>categories</strong>
+                                    <select name="category_id" class="form-control @error('category_id'){{'is-invalid'}}@enderror custom-select">
+                                        <option>--- Select an Option ---</option>
+                                        @foreach($categories as $category)
+                                            <option @if($category->id==$post->category_id){{"selected"}}@endif value="{{$category->id}}">{{$category->name}}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('category_id')
+                                    <span class="form-text text-danger">{{$errors->first('category_id')}}</span>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
                                         <strong>Body:</strong>
                                         <textarea class="form-control" style="height:150px" name="body"
                                         >{{ $post->body}}</textarea>
@@ -41,7 +53,7 @@
                                 </dl>
                                 <dl class="">
                                     <dt> Last Updated AT:</dt>
-                                    <dd>{{date ('M j, Y h:ia', strtotime($post->created_at))}}</dd>
+                                    <dd>{{date ('M j, Y h:ia', strtotime($post->updated_at))}}</dd>
                                 </dl>
                                 <hr>
                                 <div class="row">

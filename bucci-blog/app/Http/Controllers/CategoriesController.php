@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Post;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -44,14 +44,13 @@ class CategoriesController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+
      */
-    public function show($id)
+    public function show(Post $id)
     {
-        //
+        return view ('adminpages.show')->with([
+            'id'=> $post   // note id is post
+        ]);
     }
 
     /**

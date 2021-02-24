@@ -20,7 +20,7 @@ Route::get('blog/{post:slug}', [App\Http\Controllers\BlogController::class, 'get
 
 
 Route::prefix('admin')->group(function (){
-    Route::resource('posts', PostController::class)->only(['index','store','show','update','destroy','edit',  ]);
+    Route::resource('posts', PostController::class)->only(['index','store','show','update','destroy','edit', 'create', ]);
     Route::get('/auth/register', [AuthController::class, 'getSignUp'])->name('auth.register');
     Route::post('/auth/post/register', [AuthController::class,'postSignUp'])->name('auth.postregister');
     Route::get('/auth/login', [AuthController::class, 'getLogIN'])->name('auth.login');

@@ -66,12 +66,22 @@
                                     </div>
 
                                 </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form-group">
+                                        <strong>Category:</strong>
+                                       <select class="form-control" name="category_id">
 
+                                           @foreach($categories as $category)
+                                               <option value="{{$category->id}}">{{$category->name}}</option>
+                                           @endforeach
+                                       </select>
+                                    </div>
+                                    </div>
 
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">
                                         <strong>Body:</strong>
-                                        <textarea class="form-control" style="height:150px" name="body" value="body"
+                                        <textarea class="form-control"  name="body" value="body"
                                         ></textarea>
 {{--                                       <span class="text-danger form-text">--}}
 {{--                                            @if($errors->has('body'))--}}

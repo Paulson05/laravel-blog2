@@ -40,9 +40,14 @@
                                         <dt>Created AT:</dt>
                                         <dd>{{date ('M j, Y h:ia', strtotime($post->created_at))}}</dd>
                                     </dl>
+
                                     <dl class="dl-horizontal">
                                         <dt> Last Updated AT:</dt>
                                         <dd>{{date ('M j, Y h:ia', strtotime($post->updated_at))}}</dd>
+                                    </dl>
+                                    <dl class="dl-horizontal">
+                                        <dt> Category:</dt>
+                                        <p>{{optional($post->category)->name}}</p>
                                     </dl>
                                     <hr>
                                     <div class="row">

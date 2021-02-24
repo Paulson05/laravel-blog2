@@ -14,12 +14,16 @@ class Post extends Model
         'title',
         'body',
         'slug',
+        'category_id',
 
 
 
     ];
     public  function category(){
         return $this->belongsTo('App\Models\Category');
+    }
+    public  function tags(){
+        return $this->belongsTo('App\Models\Tag');
     }
 
 
