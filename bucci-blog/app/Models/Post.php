@@ -15,6 +15,7 @@ class Post extends Model
         'body',
         'slug',
         'category_id',
+        'name'
 
 
 
@@ -23,7 +24,7 @@ class Post extends Model
         return $this->belongsTo('App\Models\Category');
     }
     public  function tags(){
-        return $this->belongsTo('App\Models\Tag');
+        return $this->belongsToMany(Tag::class,'post_tag','post_id','tag_id');
     }
 
 

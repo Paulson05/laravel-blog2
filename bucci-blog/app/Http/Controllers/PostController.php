@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\createFormRequest;
 use App\Models\Post;
+use App\Models\Tag;
 use App\Models\Users;
 use App\Models\Category;
 use Auth;
@@ -13,9 +14,11 @@ class PostController extends Controller
     public function index(){
         $posts = Post::orderBy('id', 'desc')->paginate(7);
         $categories = Category::all();
+        $tags = Tag::all();
         return view ('adminpages.index')->with([
             'posts'=>$posts,
-            'categories'=>$categories
+            'categories'=>$categories,
+            'tags' =>$tags
         ]);
     }
 
@@ -24,9 +27,11 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
+//           dd($request->all());
+        $array=collect($request->only(['title', 'body', 'slug', 'category_id',]))->all();
 
-        $array=collect($request->only(['title', 'body', 'slug', 'category_id']))->all();
-        Post::create($array);
+        $post = Post::create($array);
+        $post->tags()->sync($request->name);
 
 
         return  redirect()->route('posts.index')->with('info', 'post created succesfully');

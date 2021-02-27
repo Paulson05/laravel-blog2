@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\PasswordResetController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\TagController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -36,6 +37,8 @@ Route::prefix('admin')->group(function (){
     Route::post('password/reset/{email}/',[PasswordResetController::class, 'postPasswordChange'])->name('auth.resetformtokenchange');
     //
     Route::resource('categories', CategoriesController::class)->only(['index','store','show','update','destroy','edit',  ]);
+    Route::resource('tags', TagController::class)->only(['index','store','show','update','destroy','edit',  ]);
+
 
 });
 

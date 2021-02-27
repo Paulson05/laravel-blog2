@@ -77,6 +77,22 @@
                                        </select>
                                     </div>
                                     </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+
+
+                                        <div class="form-group">
+                                            <label><strong>Tags:</strong></label><br>
+                                            <select name="name[]" id="cars" multiple class="form-control custom-select">
+                                           @foreach($tags as $tag)
+
+
+                                                    <option value="{{$tag->id}}">{{$tag->name}}</option>
+                                            @endforeach
+                                            </select>
+
+                                        </div>
+
+                                </div>
 
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">

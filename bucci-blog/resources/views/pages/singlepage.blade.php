@@ -12,6 +12,8 @@
                   <h2 class=" text-capitalize">{{$post->body}}</h2>
              <hr>
                <p>Posted in:{{optional($post->category)->name}}</p>
+               <hr>
+                 <p>Tags{{optional($post->tag)->name}}</p>
            </div>
            </div>
        </div>
