@@ -3,7 +3,7 @@
 
 @section('title', '| show')
 
-@include('adminpages.partials.navbar')
+
 
 <div class="d-flex flex-column" id="content-wrapper">
     <div id="content">

@@ -13,7 +13,7 @@ class BlogController extends Controller
 
         return view('pages.singlepage')->with([
                'post'=> $post,
-                'tag'=> $tag
+                'id'=> $tag
            ]);
     }
 }
