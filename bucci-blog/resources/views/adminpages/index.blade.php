@@ -26,7 +26,7 @@
 
             </div>
 
-        </div>
+           </div>
 
         <!-- The Modal -->
         <div class="modal" id="myModal">
