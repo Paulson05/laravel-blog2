@@ -17,7 +17,7 @@
                     <form action="{{route('posts.update', ['post'=>$post->id])}}" method="POST">
                         @method('PUT')
                         @include('adminpages.partials.alert')
-                        <div class="row ">
+                        <divphp class="row ">
                             <div class="col-8" >
                                 @csrf
                                 <div class="form-group">
@@ -67,7 +67,7 @@
                                     </div>
                 </div>
                              </div>
-                        </div>
+                        </divphp>
                     </form>
                 </div>
             </div>

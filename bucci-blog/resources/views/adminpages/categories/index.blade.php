@@ -87,6 +87,22 @@
 
 
 
+                                    <a href="" title="show">
+                                        <i class="btn btn-danger fas fa-eye"></i>
+                                    </a>
+                                    <a href="" >
+                                        <i class="btn btn-danger fas fa-edit" ></i>
+                                    </a>
+                                    <form style="display: inline-block" method="post" action="" >
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm p-0"><i class="btn btn-danger fas fa-trash-alt" ></i></button>
+                                    </form>
+
+
+
+
+
                                 </td>
 
                             </tr>
