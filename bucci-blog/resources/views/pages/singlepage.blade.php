@@ -13,7 +13,13 @@
              <hr>
                <p>Posted in:{{optional($post->category)->name}}</p>
                <hr>
-                 <p>Tags{{optional($post->tag)->name}}</p>
+         Tag:
+               @foreach($post->tags as $tag)
+                   <span>{{($tag->name)}}</span>
+
+               @endforeach
+
+
            </div>
            </div>
        </div>
