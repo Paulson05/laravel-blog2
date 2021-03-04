@@ -8,9 +8,9 @@ use App\Models\Tag;
 
 class BlogController extends Controller
 {
-    public function getSinglePost(Post $post){
+    public function getSinglePost(Post $post, Tag $tags){
 //        $post = Post::where('slug', '=', $slug )->first();
-             $tags =Tag::all();
+//             $tags =Tag::all();
         return view('pages.singlepage')->with([
                'post'=> $post,
                 'tags'=> $tags

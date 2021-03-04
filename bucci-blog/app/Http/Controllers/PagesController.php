@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Auth;
 use Illuminate\Http\Request;
+use Mail;
 
 class PagesController extends Controller
 {
@@ -30,6 +31,25 @@ class PagesController extends Controller
 
      public function contact(){
         return view ('pages.contact');
+    }
+public function postContact(Request  $request){
+
+
+    $this->validate($request,[
+        'email'=>'required|email',
+        'subject'=>'min:5',
+        'bodymessage'=>'min:10'
+
+    ]);
+
+    $data=collect($request->only(['email', 'subject', 'bodymessage',]))->all();
+    Mail::send('emails.contact', $data,function ($message) use ($data){
+        $message->from ($data['email']);
+        $message->to ('onyebuchiokofu@gmail.com');
+        $message->subject ($data['subject']);
+    } );
+        return redirect()->route('pages.home')
+            ->with('info', 'email sent successfully!');
     }
     public function service(){
         return view ('pages.service');

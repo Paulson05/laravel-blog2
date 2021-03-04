@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PagesController::class, 'home'])->name('pages.home');
 Route::get('/about', [PagesController::class, 'about'])->name('pages.about');
 Route::get('/contact', [PagesController::class, 'contact'])->name('pages.contact');
+Route::post('/contact', [PagesController::class, 'postContact'])->name('pages.contact');
+
 Route::get('/service', [PagesController::class, 'service'])->name('pages.service');
 Route::get('blog/{post:slug}', [App\Http\Controllers\BlogController::class, 'getSinglePost'])->name('getSinglePost')
     ->where('slug', '[\w\d\-\_]+');
