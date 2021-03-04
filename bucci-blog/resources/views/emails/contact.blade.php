@@ -9,9 +9,11 @@
     <div id="content">
         <h1> you are welcome</h1>
 
-      send via : {{$bodymessage}}
-        {{$email}}
+      send via :{{$email}}
         </div>
+    <div>
+        {{$bodymessage}}
+    </div>
 </div>
 @endsection
 
