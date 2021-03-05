@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\AuthController;
 
 use App\Http\Controllers\Auth\PasswordResetController;
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\TagController;
@@ -40,6 +41,9 @@ Route::prefix('admin')->group(function (){
     //
     Route::resource('categories', CategoriesController::class)->only(['index','store','show','update','destroy','edit',  ]);
     Route::resource('tags', TagController::class)->only(['index','store','show','update','destroy','edit',  ]);
+
+    Route::resource('comments', CommentsController::class)->only(['index','store','show','update','destroy','edit',  ]);
+
 
 
 });

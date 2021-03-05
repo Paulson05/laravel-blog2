@@ -17,11 +17,51 @@
                @foreach($post->tags as $tag)
                    <span>{{($tag->name)}}</span>
 
+
                @endforeach
 
 
            </div>
            </div>
+       </div>
+       <div class="row">
+           <form action="{{route('comments.store',['comments'=>$post->id])}}" method="post">
+               @csrf
+
+               <div class="row justify-content-center">
+                   <div class="col-md-4 p-2">
+                       <input type="text" name="name" class="form-control" placeholder="name" @error('email'){{'is-invalid'}}@enderror>
+                       @error('email')
+                       <span class="form-text text-danger">{{$errors->first('email')}}</span>
+                       @enderror
+                   </div>
+
+                       <div class="col-md-4 p-2">
+                           <input type="email" name="email" class="form-control" placeholder="your email" @error('email'){{'is-invalid'}}@enderror>
+                           @error('email')
+                           <span class="form-text text-danger">{{$errors->first('email')}}</span>
+                           @enderror
+                       </div>
+
+
+               </div>
+
+               <div class="row justify-content-center ml-5">
+                   <div class="col-md-8">
+                       <textarea name="comments" id="" cols="82" rows="6"  placeholder="add your comment" class="form-control"></textarea>
+                       @error('comments')
+                       <span class="form-text text-danger">{{$errors->first('comments')}}</span>
+                       @enderror
+                   </div>
+                   <div class="col-md-8 m-2">
+                       <button type="submit" class="btn btn-danger" >
+                           comment
+                       </button>
+                   </div>
+
+               </div>
+
+           </form>
        </div>
    </div>
 
