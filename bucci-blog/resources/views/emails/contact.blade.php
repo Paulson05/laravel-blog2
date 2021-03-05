@@ -1,9 +1,3 @@
-@extends('adminpages.layout.dashboard')
-@section('content')
-
-@section('title', '| show')
-
-
 
 <div class="d-flex flex-column" id="content-wrapper">
     <div id="content">
@@ -15,5 +9,5 @@
         {{$bodymessage}}
     </div>
 </div>
-@endsection
+
 

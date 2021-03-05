@@ -8,11 +8,17 @@
             <div class="row justify-content-center">
                 <div class="col-md-4 p-2">
                     <input type="email" class="form-control" name = "email" placeholder="Email">
+                    @error('email')
+                    <span class="form-text text-danger">{{$errors->first('email')}}</span>
+                    @enderror
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-4 p-2">
                     <input type="password" name="password" class="form-control" placeholder="password">
+                    @error('password')
+                    <span class="form-text text-danger">{{$errors->first('password')}}</span>
+                    @enderror
                 </div>
 
 
