@@ -24,6 +24,15 @@
            </div>
            </div>
        </div>
+       <hr>
+       <div class="row">
+           <div class="col-md-4 p-2">
+                 @foreach($post->comments as $comment)
+                     <p>{{$comment->name}}</p>
+                     <p>comments: {{$comment->comments}}</p>
+               @endforeach
+           </div>
+       </div>
        <div class="row">
            <form action="{{route('comments.store',['comments'=>$post->id])}}" method="post">
                @csrf
