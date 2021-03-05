@@ -17,6 +17,7 @@ class CreateTagsTable extends Migration
             $table->bigIncrements('id')->unsigned();
             $table->string('name');
             $table->timestamps();
+
         });
     }
 
