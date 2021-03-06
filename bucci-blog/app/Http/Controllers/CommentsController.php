@@ -41,7 +41,7 @@ class CommentsController extends Controller
         $this->validate($request,[
             'name'=>'required|max:25',
             'email'=>'required|email',
-            'comments'=>'required|max:25'
+            'comments'=>'required|max:250'
         ]);
         $post = Post::findOrFail($request->query('comments'));
 
@@ -50,7 +50,7 @@ class CommentsController extends Controller
          $comments = Comment::all();
 
 
-        return  redirect()->route('pages.home',[])->with('info', 'comments created succesfully')->with([
+        return  redirect()->route('pages.home')->with('info', 'comments created succesfully')->with([
             'comments' => $comments
         ]);
     }

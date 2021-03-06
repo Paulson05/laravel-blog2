@@ -11,7 +11,7 @@
                  <li class="nav-item"><a class="nav-link" href="{{route('auth.users')}}"><i class="fas fa-user"></i><span>Users</span></a></li>
                 <li class="nav-item"><a class="nav-link" href="{{route('categories.index')}}"><i class="fas fa-table"></i><span>Categories</span></a></li>
                 <li class="nav-item"><a class="nav-link" href="{{route('tags.index')}}"><i class="far fa-user-circle"></i><span>Tags</span></a></li>
-                <li class="nav-item"><a class="nav-link" href=""><i class="fas fa-user-circle"></i><span>Register</span></a></li>
+                <li class="nav-item"><a class="nav-link" href=""><i class="fas fa-user-circle"></i><span>Comments</span></a></li>
             </ul>
             <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
         </div>

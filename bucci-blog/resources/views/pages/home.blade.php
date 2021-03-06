@@ -28,6 +28,7 @@
                   <h2  class="text-center m-2" style="background: rgb(73, 95, 143)" >latest News</h2>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam rerum accusamus architecto blanditiis, eum sunt, ducimus tempora mollitia minima provident ad dignissimos. Id rem amet sapiente. Facere inventore ea vero.</p>
                   <a , 200)}} {{strlen($post->body) > 200 ? "...." : ""}}</p>
+                  <h3> <i class="fas fa-comment-alt m-2"></i> {{$post->comments->count()}}<span class="m-1">comments</span></h3>
                 <a class="btn btn-success" href="{{ route('getSinglePost',['post'=>$post->slug])  }}">read more</a>
               </div>
                    <div class="col-md-12">
@@ -35,6 +36,8 @@
                         @foreach ($posts as $post)
                             <h2>{{$post->title}}</h2>
                             <p>{{Substr($post->body, 0, 200)}} {{strlen($post->body) > 200 ? "...." : ""}}</p>
+                           <h3> <i class="fas fa-comment-alt m-2"></i> {{$post->comments->count()}}<span class="m-1">comments</span></h3>
+
                             <a class="btn btn-success" href="{{ route('getSinglePost',['post'=>$post->slug])  }}">read more</a>
                         @endforeach
               </div>
@@ -47,6 +50,8 @@
                    @foreach ($post2 as $post)
                        <h2>{{$post->title}}</h2>
                        <p>{{Substr($post->body, 0, 200)}} {{strlen($post->body) > 200 ? "...." : ""}}</p>
+                       <h3> <i class="fas fa-comment-alt m-2"></i> {{$post->comments->count()}}<span class="m-1">comments</span></h3>
+
                        <a class="btn btn-success" href="{{ route('getSinglePost',['post'=>$post->slug])  }}">read more</a>
                    @endforeach
                </div>
@@ -55,6 +60,8 @@
                    @foreach ($post4 as $post)
                        <h2>{{$post->title}}</h2>
                        <p>{{Substr($post->body, 0, 200)}} {{strlen($post->body) > 200 ? "...." : ""}}</p>
+                       <h3> <i class="fas fa-comment-alt m-2"></i> {{$post->comments->count()}}<span class="m-1">comments</span></h3>
+
                        <a class="btn btn-success" href="{{ route('getSinglePost',['post'=>$post->slug])  }}">read more</a>
                    @endforeach
                </div>
@@ -64,6 +71,8 @@
                    @foreach ($post4 as $post)
                        <h2>{{$post->title}}</h2>
                        <p>{{Substr($post->body, 0, 200)}} {{strlen($post->body) > 200 ? "...." : ""}}</p>
+                       <h3> <i class="fas fa-comment-alt m-2"></i> {{$post->comments->count()}}<span class="m-1">comments</span></h3>
+
                        <a class="btn btn-success" href="{{ route('getSinglePost',['post'=>$post->slug])  }}">read more</a>
                    @endforeach
                </div>

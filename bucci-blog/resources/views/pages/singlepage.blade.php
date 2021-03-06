@@ -11,11 +11,11 @@
                   <h2 class="text-center ">{{$post->title}}</h2>
                   <h2 class=" text-capitalize">{{$post->body}}</h2>
              <hr>
-               <p>Posted in:{{optional($post->category)->name}}</p>
+              category: <span class="btn btn-primary">{{optional($post->category)->name}}</span>
                <hr>
          Tag:
                @foreach($post->tags as $tag)
-                   <span>{{($tag->name)}}</span>
+                   <span class="btn btn-success">{{($tag->name)}}</span>
 
 
                @endforeach
@@ -27,10 +27,21 @@
        <hr>
        <div class="row">
            <div class="col-md-4 p-2">
+                    <h3> <i class="fas fa-comment-alt m-2"></i> {{$post->comments->count()}}<span class="m-1">comments</span></h3>
+
                  @foreach($post->comments as $comment)
-                     <p>{{$comment->name}}</p>
-                     <p>comments: {{$comment->comments}}</p>
+                     <div class="row">
+                        <div>
+                            <p><span class="m-2">Name:{{$comment->name}}</span> <span class="mt-5">{{date ('M j, Y h:ia', strtotime($comment->created_at))}}</span></p>
+
+
+                        </div>
+                         <span class="mt-3">  Comments: {{$comment->comments}}</span>
+                         <hr>
+                     </div>
+
                @endforeach
+
            </div>
        </div>
        <div class="row">
