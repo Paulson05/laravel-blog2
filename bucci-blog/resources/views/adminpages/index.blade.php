@@ -12,7 +12,9 @@
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 <script>
     tinymce.init({
-        selector: '#mytextarea'
+        selector: 'textarea'
+
+
     });
 </script>
 
@@ -102,7 +104,7 @@
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">
                                         <strong>Body:</strong>
-                                        <textarea class="form-control" id="mytextarea" name="body" value="body"
+                                        <textarea class="form-control"  name="body" value="body"
                                         ></textarea>
 {{--                                       <span class="text-danger form-text">--}}
 {{--                                            @if($errors->has('body'))--}}

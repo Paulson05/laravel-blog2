@@ -35,7 +35,7 @@
 
                         @foreach ($posts as $post)
                             <h2>{{$post->title}}</h2>
-                            <p>{{Substr($post->body, 0, 200)}} {{strlen($post->body) > 200 ? "...." : ""}}</p>
+                            <p>{{Substr(strip_tags($post->body), 0, 200)}} {{strlen(strip_tags($post->body)) > 200 ? "...." : ""}}</p>
                            <h3> <i class="fas fa-comment-alt m-2"></i> {{$post->comments->count()}}<span class="m-1">comments</span></h3>
 
                             <a class="btn btn-success" href="{{ route('getSinglePost',['post'=>$post->slug])  }}">read more</a>
@@ -49,7 +49,7 @@
                    <h4 class="text-center m-2" >Local News</h4>
                    @foreach ($post2 as $post)
                        <h2>{{$post->title}}</h2>
-                       <p>{{Substr($post->body, 0, 200)}} {{strlen($post->body) > 200 ? "...." : ""}}</p>
+                       <p>{{Substr(strip_tags($post->body), 0, 200)}} {{strlen(strip_tags($post->body)) > 200 ? "...." : ""}}</p>
                        <h3> <i class="fas fa-comment-alt m-2"></i> {{$post->comments->count()}}<span class="m-1">comments</span></h3>
 
                        <a class="btn btn-success" href="{{ route('getSinglePost',['post'=>$post->slug])  }}">read more</a>
@@ -59,7 +59,7 @@
                    <h4  class="text-center m-2" style="background: rgb(11, 192, 66)" >World News</h4>
                    @foreach ($post4 as $post)
                        <h2>{{$post->title}}</h2>
-                       <p>{{Substr($post->body, 0, 200)}} {{strlen($post->body) > 200 ? "...." : ""}}</p>
+                       <p>{{Substr(strip_tags($post->body), 0, 200)}} {{strlen(strip_tags($post->body)) > 200 ? "...." : ""}}</p>
                        <h3> <i class="fas fa-comment-alt m-2"></i> {{$post->comments->count()}}<span class="m-1">comments</span></h3>
 
                        <a class="btn btn-success" href="{{ route('getSinglePost',['post'=>$post->slug])  }}">read more</a>
@@ -70,7 +70,7 @@
                    <h4 class="text-center m-2" style="background: red" >Sport News</h4>
                    @foreach ($post4 as $post)
                        <h2>{{$post->title}}</h2>
-                       <p>{{Substr($post->body, 0, 200)}} {{strlen($post->body) > 200 ? "...." : ""}}</p>
+                       <p>{{Substr(strip_tags($post->body), 0, 200)}} {{strlen(strip_tags($post->body)) > 200 ? "...." : ""}}</p>
                        <h3> <i class="fas fa-comment-alt m-2"></i> {{$post->comments->count()}}<span class="m-1">comments</span></h3>
 
                        <a class="btn btn-success" href="{{ route('getSinglePost',['post'=>$post->slug])  }}">read more</a>
