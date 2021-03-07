@@ -9,7 +9,12 @@
 
 @section('title', '| show post')
 
-
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script>
+    tinymce.init({
+        selector: '#mytextarea'
+    });
+</script>
 
 <div class="d-flex flex-column" id="content-wrapper">
     <div id="content">
@@ -97,7 +102,7 @@
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">
                                         <strong>Body:</strong>
-                                        <textarea class="form-control"  name="body" value="body"
+                                        <textarea class="form-control" id="mytextarea" name="body" value="body"
                                         ></textarea>
 {{--                                       <span class="text-danger form-text">--}}
 {{--                                            @if($errors->has('body'))--}}
