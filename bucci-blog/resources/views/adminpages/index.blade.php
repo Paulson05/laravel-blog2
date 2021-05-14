@@ -1,9 +1,4 @@
 
-
-
-
-
-
 @extends('adminpages.layout.dashboard')
 @section('content')
 
